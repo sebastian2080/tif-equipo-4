@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Noche Ricotera - Edición Día de la Lealtad",
+    "date": "16 de Octubre",
+    "time": "21:00 hs",
+    "category": "Música en Vivo",
+    "description": "Tributo acústico, mística redonda, barra económica y comidas populares frente a la UNPAZ.",
+    "entry": "Entrada libre y gratuita"
+  },
+  {
+    "id": 2,
+    "title": "Noche del León - Acústico",
+    "date": "29 de Agosto",
+    "time": "19:00 hs",
+    "category": "Peña Cultural",
+    "description": "Encuentro musical abierto con artistas locales de José C. Paz y micrófono abierto.",
+    "entry": "Entrada libre y gratuita"
+  },
+  {
+    "id": 3,
+    "title": "Especial Videojuegos & Torneo",
+    "date": "28 de Septiembre",
+    "time": "18:00 hs",
+    "category": "Comunidad",
+    "description": "Tarde de consolas, torneos relámpago entre estudiantes y promos en panchos y bebidas.",
+    "entry": "Inscripción en barra"
+  }
+]

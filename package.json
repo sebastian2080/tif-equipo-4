@@ -1,0 +1,16 @@
+{
+  "name": "ultimo-bondi-ecommerce",
+  "version": "1.0.0",
+  "description": "Plataforma web y pedidos anticipados - Ultimo Bondi Espacio Cultural (TIF Equipo 4)",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "author": "Equipo 4 - TUCE UNPAZ",
+  "license": "ISC"
+}

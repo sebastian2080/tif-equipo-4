@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Último Bondi - Espacio Cultural & Bufet</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header id="site-header"></header>
+
+    <main>
+        <!-- TODO EQUIPO 4: Personalizar textos del Hero, slogans o sumar un carrusel de promociones -->
+        <section class="hero">
+            <div class="container">
+                <span class="hero-tag">🎸 Frente a la UNPAZ • José C. Paz</span>
+                <h1>COMIDA CASERA, <span>PRECIOS POPULARES</span> Y CULTURA ROCK</h1>
+                <p>
+                    Espacio autogestivo creado por estudiantes. Armá tu pedido anticipado desde el celular, aboná con Mercado Pago y retirá sin demoras entre cursadas.
+                </p>
+                <div class="hero-buttons">
+                    <a href="menu.html" class="btn btn-primary">🍔 Ver Menú y Pedir</a>
+                    <a href="agenda.html" class="btn btn-outline">🎶 Agenda Cultural</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">DESTACADOS <span>DEL DÍA</span></h2>
+                    <a href="menu.html" class="btn btn-outline">Ver los 20 productos →</a>
+                </div>
+                <div class="grid-cards" id="featured-products"></div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">PRÓXIMOS <span>ENCUENTROS</span></h2>
+                    <a href="agenda.html" class="btn btn-outline">Toda la agenda →</a>
+                </div>
+                <div class="grid-cards" id="home-events"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="scripts/layout.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/home.js"></script>
+</body>
+</html>
