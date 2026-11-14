@@ -10,19 +10,51 @@
     <header id="site-header"></header>
 
     <main>
-        <!-- TODO EQUIPO 4: Personalizar textos del Hero, slogans o sumar un carrusel de promociones -->
-        <section class="hero">
-            <div class="container">
-                <span class="hero-tag">🎸 Frente a la UNPAZ • José C. Paz</span>
-                <h1>COMIDA CASERA, <span>PRECIOS POPULARES</span> Y CULTURA ROCK</h1>
-                <p>
-                    Espacio autogestivo creado por estudiantes. Armá tu pedido anticipado desde el celular, aboná con Mercado Pago y retirá sin demoras entre cursadas.
-                </p>
-                <div class="hero-buttons">
-                    <a href="menu.html" class="btn btn-primary">🍔 Ver Menú y Pedir</a>
-                    <a href="agenda.html" class="btn btn-outline">🎶 Agenda Cultural</a>
+        <!-- ========================================================================
+             HERO CARRUSEL PRINCIPAL:
+             - Slide 1: Portada principal de Último Bondi (texto + botones).
+             - Slides 2, 3, etc.: Banners gráficos creados en Canva.
+             TODO EQUIPO 4: Guardar los banners de Canva (1400 x 460 px aprox.) en
+             public/images/banners/ y cambiar los src="" de los slides 2 y 3.
+             ======================================================================== -->
+        <section class="hero-carousel" id="hero-carousel">
+            <div class="hero-track" id="hero-track">
+                
+                <!-- SLIDE 1: HERO PRINCIPAL ACTUAL (No se pierde nada) -->
+                <div class="hero-slide hero-slide-main">
+                    <div class="container">
+                        <span class="hero-tag">🎸 Frente a la UNPAZ • José C. Paz</span>
+                        <h1>COMIDA CASERA, <span>PRECIOS POPULARES</span> Y CULTURA ROCK</h1>
+                        <p>
+                            Espacio autogestivo creado por estudiantes. Armá tu pedido anticipado desde el celular, aboná con Mercado Pago y retirá sin demoras entre cursadas.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="menu.html" class="btn btn-primary">🍔 Ver Menú y Pedir</a>
+                            <a href="agenda.html" class="btn btn-outline">🎶 Agenda Cultural</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- SLIDE 2: BANNER CANVA 1 -->
+                <div class="hero-slide hero-slide-image">
+                    <img src="images/banners/banner1.jpg" 
+                         alt="Banner Promocional 1 - Último Bondi"
+                         onerror="this.onerror=null; this.src='https://placehold.co/1400x480/1e1e1e/f5b800?text=BANNER+CANVA+1+(1400x480px)+-+Subir+en+public/images/banners/banner1.jpg';">
+                </div>
+
+                <!-- SLIDE 3: BANNER CANVA 2 -->
+                <div class="hero-slide hero-slide-image">
+                    <img src="images/banners/banner2.jpg" 
+                         alt="Banner Promocional 2 - Último Bondi"
+                         onerror="this.onerror=null; this.src='https://placehold.co/1400x480/121212/f5b800?text=BANNER+CANVA+2+(1400x480px)+-+Subir+en+public/images/banners/banner2.jpg';">
+                </div>
+
             </div>
+
+            <!-- Controles de navegación -->
+            <button class="hero-arrow prev" id="hero-prev" aria-label="Anterior">&#10094;</button>
+            <button class="hero-arrow next" id="hero-next" aria-label="Siguiente">&#10095;</button>
+            <div class="hero-dots" id="hero-dots"></div>
         </section>
         <section class="section">
             <div class="container">

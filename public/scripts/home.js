@@ -1,7 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initHeroCarousel();
     loadFeaturedProducts();
     loadUpcomingEvents();
 });
+
+function initHeroCarousel() {
+    const track = document.getElementById('hero-track');
+    const prevBtn = document.getElementById('hero-prev');
+    const nextBtn = document.getElementById('hero-next');
+    const dotsContainer = document.getElementById('hero-dots');
+    const carousel = document.getElementById('hero-carousel');
+
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+    let autoplay;
+
+    slides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `hero-dot ${idx === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Slide ${idx + 1}`);
+        dot.addEventListener('click', () => goToSlide(idx));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.children);
+
+    function goToSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+    }
+
+    prevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    const startAuto = () => {
+        autoplay = setInterval(() => goToSlide(currentIndex + 1), 6000);
+    };
+    const stopAuto = () => clearInterval(autoplay);
+
+    carousel?.addEventListener('mouseenter', stopAuto);
+    carousel?.addEventListener('mouseleave', startAuto);
+
+    startAuto();
+}
 
 async function loadFeaturedProducts() {
     const container = document.getElementById('featured-products');
@@ -47,7 +91,9 @@ async function loadUpcomingEvents() {
 }
 
 function createProductCard(product) {
-    const fallbackImg = `https://placehold.co/600x400/1e1e1e/f5b800?text=${encodeURIComponent(product.name)}`; const oldPriceHtml = product.oldPrice ? `<span class="price-old">$${product.oldPrice}</span>`
+    const fallbackImg = `https://placehold.co/600x400/1e1e1e/f5b800?text=${encodeURIComponent(product.name)}`;
+    const oldPriceHtml = product.oldPrice
+        ? `<span class="price-old">$${product.oldPrice}</span>`
         : '';
 
     const safeProduct = JSON.stringify(product).replace(/"/g, '&quot;');
@@ -63,7 +109,8 @@ function createProductCard(product) {
                 <p class="product-desc">${product.description}</p>
                 <div class="product-footer">
                     <div class="price-group">
-                        ${oldPriceHtml} <span class="price-current">$${product.price}</span>
+                        ${oldPriceHtml}
+                        <span class="price-current">$${product.price}</span>
                     </div>
                     <button class="btn-add" onclick="addToCart(${safeProduct})">
                         + Agregar
