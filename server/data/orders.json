@@ -1,0 +1,21 @@
+[
+  {
+    "orderId": "UB-1001",
+    "customerName": "s",
+    "items": [
+      {
+        "id": 1,
+        "name": "Pastel de Papas Casero",
+        "price": 6000,
+        "quantity": 1
+      }
+    ],
+    "total": 6000,
+    "modality": "Retiro en el local",
+    "pickupDate": "2026-11-14",
+    "pickupTime": "18:00",
+    "paymentProvider": "Mercado Pago",
+    "paymentStatus": "approved",
+    "createdAt": "2026-11-14T15:34:28.648Z"
+  }
+]
