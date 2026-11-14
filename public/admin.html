@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Coordinador | Último Bondi</title>
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+
+    <!-- Pantalla de acceso rápido -->
+    <div id="login-screen" class="login-overlay">
+        <div class="login-box">
+            <h1>🚌 Acceso Coordinadores</h1>
+            <p style="color: var(--admin-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">
+                Ingresá la clave del espacio para gestionar pedidos, precios y agenda.
+            </p>
+            <form id="admin-login-form" style="display: grid; gap: 0.75rem;">
+                <input type="password" id="admin-pass" class="input-admin" placeholder="Clave (ej: bondi2026)" required>
+                <button type="submit" class="btn-admin">Entrar al Panel</button>
+            </form>
+            <p style="margin-top: 1rem;">
+                <a href="index.html" style="color: var(--admin-muted); font-size: 0.85rem;">← Volver a la web</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Panel principal (oculto hasta validar clave) -->
+    <div id="admin-dashboard" style="display: none;">
+        <header class="admin-header">
+            <div>
+                <h1> PANEL DE GESTIÓN — ÚLTIMO BONDI</h1>
+                <small style="color: var(--admin-muted);">Administración centralizada de comandas, carta y agenda</small>
+            </div>
+            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                <a href="carta-imprimible.html" target="_blank" class="btn-admin">🖨️ Ver Carta Imprimible A4</a>
+                <a href="index.html" class="btn-outline">Ver Web Pública</a>
+            </div>
+        </header>
+
+        <main class="admin-container">
+            <!-- Resumen de caja y operación -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span>Pedidos recibidos</span>
+                    <strong id="stat-orders">0</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Total recaudado (Mercado Pago)</span>
+                    <strong id="stat-revenue">$0</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Platos activos en carta</span>
+                    <strong id="stat-products">0</strong>
+                </div>
+            </section>
+
+            <!-- Navegación por pestañas -->
+            <nav class="tabs-nav">
+                <button class="tab-btn active" data-tab="tab-orders">📋 Comandas y Caja</button>
+                <button class="tab-btn" data-tab="tab-prices">💲 Editor Rápido de Precios</button>
+                <button class="tab-btn" data-tab="tab-events">🎸 Publicar Evento Cultural</button>
+            </nav>
+
+            <!-- Pestaña 1: Comandas -->
+            <section id="tab-orders" class="tab-panel active">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h2>Pedidos Anticipados</h2>
+                    <button class="btn-outline" onclick="loadAdminOrders()">🔄 Actualizar</button>
+                </div>
+                <div id="admin-orders-list" class="orders-grid"></div>
+            </section>
+
+           <!-- Pestaña 2: Precios y Productos -->
+            <section id="tab-prices" class="tab-panel">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <div>
+                        <h2>Gestión de Carta y Precios</h2>
+                        <p style="color: var(--admin-muted); font-size: 0.85rem;">Agregá platos nuevos o editá precios. Se actualiza al instante en la web y en la Carta A4.</p>
+                    </div>
+                    <a href="carta-imprimible.html" target="_blank" class="btn-admin">🖨️ Generar Carta A4 Actualizada</a>
+                </div>
+
+                <!-- Formulario rápido para agregar producto nuevo -->
+                <form id="admin-product-form" style="background: var(--admin-card); border: 1px solid var(--admin-border); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; display: grid; gap: 0.75rem;">
+                    <strong style="color: var(--admin-accent);">➕ Agregar Nuevo Plato / Producto</strong>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+                        <input type="text" id="prod-name" class="input-admin" placeholder="Nombre del plato *" required>
+                        <select id="prod-category" class="input-admin" required>
+                            <option value="Menú del Día">Menú del Día</option>
+                            <option value="Comidas Rápidas">Comidas Rápidas</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Kiosco y Cafetería">Kiosco y Cafetería</option>
+                        </select>
+                        <input type="number" id="prod-price" class="input-admin" placeholder="Precio ($) *" min="0" required>
+                        <input type="text" id="prod-img" class="input-admin" placeholder="Ruta imagen (opcional)" value="images/products/default.jpg">
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <input type="text" id="prod-desc" class="input-admin" style="flex: 1;" placeholder="Descripción breve (ej: Con guarnición de papas fritas)">
+                        <button type="submit" class="btn-admin">Agregar a la Carta</button>
+                    </div>
+                </form>
+
+                <!-- Tabla de edición rápida -->
+                <div style="overflow-x: auto;">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Precio ($)</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-prices-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- Pestaña 3: Eventos -->
+            <section id="tab-events" class="tab-panel">
+                <h2 style="margin-bottom: 1rem;">Cargar Nueva Fecha en Agenda Cultural</h2>
+                <form id="admin-event-form" class="event-form">
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--admin-muted);">Nombre del evento / banda / peña *</label>
+                        <input type="text" id="ev-title" class="input-admin" placeholder="Ej: Peña Folklórica y Locro Patrio" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--admin-muted);">Fecha *</label>
+                            <input type="text" id="ev-date" class="input-admin" placeholder="Ej: Viernes 28 de Noviembre" required>
+                        </div>
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--admin-muted);">Horario</label>
+                            <input type="text" id="ev-time" class="input-admin" placeholder="Ej: 21:00 hs">
+                        </div>
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--admin-muted);">Modalidad de entrada</label>
+                        <input type="text" id="ev-entry" class="input-admin" value="Entrada libre y gratuita">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.85rem; color: var(--admin-muted);">Descripción breve</label>
+                        <textarea id="ev-desc" class="input-admin" rows="3" placeholder="Detalles del evento, artistas invitados o promociones..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-admin">📢 Publicar en la Agenda</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/admin.js"></script>
+</body>
+</html>

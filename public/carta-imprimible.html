@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Imprimible A4 | Último Bondi</title>
+    <style>
+        /* Configuración exacta de hoja A4 para impresión / PDF */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #1f2937;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 3rem;
+        }
+
+        /* Barra de herramientas (se oculta automáticamente al imprimir) */
+        .print-toolbar {
+            width: 100%;
+            background: #111315;
+            color: #f3f4f6;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid #374151;
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .toolbar-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-print {
+            background: #facc15;
+            color: #111315;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Hoja A4 exacta (210mm x 297mm) */
+        .a4-sheet {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: #141414;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            padding: 20mm 16mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Si existe plantilla de Canva, oculta el encabezado por defecto para no tapar el arte */
+        .a4-sheet.has-canva-bg .default-header,
+        .a4-sheet.has-canva-bg .default-footer {
+            visibility: hidden;
+        }
+
+        .default-header {
+            text-align: center;
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .default-header h1 {
+            font-size: 26pt;
+            color: #facc15;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .default-header p {
+            font-size: 10pt;
+            color: #d1d5db;
+            margin-top: 4px;
+        }
+
+        /* Grilla de 2 columnas para que entren cómodos los 20 productos en 1 sola hoja */
+        .menu-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 22px;
+            flex: 1;
+            align-content: start;
+        }
+
+        .category-block {
+            background: rgba(18, 18, 18, 0.82);
+            border: 1px solid rgba(250, 204, 21, 0.35);
+            border-radius: 10px;
+            padding: 10px 12px;
+        }
+
+        .category-title {
+            color: #facc15;
+            font-size: 12pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 1px dashed rgba(250, 204, 21, 0.5);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 9.5pt;
+        }
+
+        .menu-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #f9fafb;
+        }
+
+        .item-dots {
+            flex: 1;
+            border-bottom: 1px dotted #6b7280;
+            margin: 0 4px;
+        }
+
+        .item-price {
+            font-weight: 800;
+            color: #facc15;
+            white-space: nowrap;
+        }
+
+        .default-footer {
+            text-align: center;
+            font-size: 8.5pt;
+            color: #9ca3af;
+            border-top: 1px solid #374151;
+            padding-top: 8px;
+            margin-top: 12px;
+        }
+
+        /* Reglas exclusivas al mandar a imprimir o guardar como PDF */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .print-toolbar {
+                display: none !important;
+            }
+            .a4-sheet {
+                box-shadow: none;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra superior de ajuste antes de imprimir -->
+    <div class="print-toolbar">
+        <div>
+            <strong>🖨️ Vista Previa Carta A4</strong>
+            <span style="color: #9ca3af; font-size: 0.85rem; margin-left: 8px;">
+                (Plantilla Canva: <code>public/images/plantilla-carta.png</code>)
+            </span>
+        </div>
+        <div class="toolbar-controls">
+            <label>
+                Espacio superior (mm):
+                <input type="number" id="top-offset" value="20" min="5" max="120" style="width: 55px; padding: 4px; border-radius: 4px; border: none;">
+            </label>
+            <label>
+                Fondo oscuro cajas:
+                <input type="checkbox" id="toggle-boxes" checked>
+            </label>
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+        </div>
+    </div>
+
+    <!-- Hoja A4 -->
+    <main id="a4-sheet" class="a4-sheet">
+        <header class="default-header">
+            <h1>🚌 ÚLTIMO BONDI</h1>
+            <p>Espacio Cultural & Gastronómico • Frente a UNPAZ • Carta Vigente al <span id="menu-date"></span></p>
+        </header>
+
+        <section id="printable-menu-grid" class="menu-columns"></section>
+
+        <footer class="default-footer">
+            Pedí anticipado y pagá sin fila desde nuestra web • Av. Leandro N. Alem / Frente a UNPAZ, José C. Paz
+        </footer>
+    </main>
+
+    <script>
+        const CATEGORIES = ['Menú del Día', 'Comidas Rápidas', 'Bebidas', 'Kiosco y Cafetería'];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const sheet = document.getElementById('a4-sheet');
+            document.getElementById('menu-date').textContent = new Date().toLocaleDateString('es-AR');
+
+            // 1. Verificar si la alumna subió la plantilla de Canva (public/images/plantilla-carta.png)
+            const templateImg = new Image();
+            templateImg.src = 'images/plantilla-carta.png';
+            templateImg.onload = () => {
+                sheet.style.backgroundImage = `url('${templateImg.src}')`;
+                sheet.classList.add('has-canva-bg');
+                // Deja más aire arriba por defecto para el logo/título del diseño de Canva
+                sheet.style.paddingTop = '48mm';
+                document.getElementById('top-offset').value = 48;
+            };
+
+            // Controles de ajuste fino en vivo
+            document.getElementById('top-offset').addEventListener('input', (e) => {
+                sheet.style.paddingTop = `${e.target.value}mm`;
+            });
+
+            document.getElementById('toggle-boxes').addEventListener('change', (e) => {
+                document.querySelectorAll('.category-block').forEach(box => {
+                    box.style.background = e.target.checked ? 'rgba(18, 18, 18, 0.82)' : 'transparent';
+                    box.style.border = e.target.checked ? '1px solid rgba(250, 204, 21, 0.35)' : 'none';
+                });
+            });
+
+            // 2. Cargar productos actualizados desde el servidor
+            try {
+                const res = await fetch('/api/products');
+                const products = await res.json();
+                const grid = document.getElementById('printable-menu-grid');
+
+                grid.innerHTML = CATEGORIES.map(cat => {
+                    const items = products.filter(p => p.category === cat);
+                    if (items.length === 0) return '';
+
+                    const rowsHtml = items.map(p => `
+                        <div class="menu-row">
+                            <span class="item-name">${p.name}</span>
+                            <span class="item-dots"></span>
+                            <span class="item-price">$${p.price}</span>
+                        </div>
+                    `).join('');
+
+                    return `
+                        <div class="category-block">
+                            <div class="category-title">${cat}</div>
+                            ${rowsHtml}
+                        </div>
+                    `;
+                }).join('');
+            } catch (err) {
+                console.error('Error al generar carta imprimible:', err);
+            }
+        });
+    </script>
+</body>
+</html>

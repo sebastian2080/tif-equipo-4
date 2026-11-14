@@ -108,6 +108,7 @@ function renderFooter() {
                             <li>🕒 ${SITE_CONFIG.hours}</li>
                             <li>📱 WhatsApp: ${SITE_CONFIG.phone}</li>
                             <li>📸 <a href="${SITE_CONFIG.instagramUrl}" target="_blank">${SITE_CONFIG.instagram}</a></li>
+                            <li><a href="admin.html">⚙️ Panel Coordinadores</a></li>
                         </ul>
                     </div>
                 </div>

@@ -17,5 +17,24 @@
     "paymentProvider": "Mercado Pago",
     "paymentStatus": "approved",
     "createdAt": "2026-11-14T15:34:28.648Z"
+  },
+  {
+    "orderId": "UB-1002",
+    "customerName": "s",
+    "items": [
+      {
+        "id": 11,
+        "name": "papas",
+        "price": 1000,
+        "quantity": 1
+      }
+    ],
+    "total": 1000,
+    "modality": "Retiro en el local",
+    "pickupDate": "2026-11-14",
+    "pickupTime": "18:00",
+    "paymentProvider": "Mercado Pago",
+    "paymentStatus": "approved",
+    "createdAt": "2026-11-14T21:09:55.916Z"
   }
 ]

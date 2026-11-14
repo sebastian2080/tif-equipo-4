@@ -1,0 +1,228 @@
+/* ============================================================================
+   ESTILOS DEL PANEL DEL COORDINADOR - ÚLTIMO BONDI
+   Podés cambiar los colores principales desde las variables de acá abajo:
+   ============================================================================ */
+:root {
+    --admin-bg: #111315;
+    --admin-card: #1a1d21;
+    --admin-border: #2c3138;
+    --admin-accent: #facc15;      /* Amarillo principal */
+    --admin-accent-text: #111315;
+    --admin-text: #f3f4f6;
+    --admin-muted: #9ca3af;
+    --admin-success: #22c55e;
+    --admin-danger: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--admin-bg);
+    color: var(--admin-text);
+    line-height: 1.5;
+}
+
+/* Pantalla de acceso rápido */
+.login-overlay {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.login-box {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.login-box h1 {
+    color: var(--admin-accent);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Barra superior del panel */
+.admin-header {
+    background: var(--admin-card);
+    border-bottom: 1px solid var(--admin-border);
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-header h1 {
+    font-size: 1.25rem;
+    color: var(--admin-accent);
+}
+
+.admin-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+/* Métricas rápidas de caja */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+.stat-card span {
+    font-size: 0.85rem;
+    color: var(--admin-muted);
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 1.75rem;
+    color: var(--admin-accent);
+    margin-top: 0.25rem;
+}
+
+/* Pestañas de navegación */
+.tabs-nav {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--admin-border);
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--admin-muted);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--admin-accent);
+    border-bottom-color: var(--admin-accent);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* Botones e inputs */
+.btn-admin {
+    background: var(--admin-accent);
+    color: var(--admin-accent-text);
+    border: none;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--admin-text);
+    border: 1px solid var(--admin-border);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.input-admin {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    color: var(--admin-text);
+    font-size: 0.95rem;
+}
+
+/* Tarjetas de comandas */
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1rem;
+}
+
+.order-card {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    border-left: 4px solid var(--admin-success);
+    border-radius: 10px;
+    padding: 1.25rem;
+}
+
+/* Tabla de precios */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--admin-card);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.price-table th, .price-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.price-table th {
+    color: var(--admin-accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.price-input {
+    width: 110px;
+    padding: 0.4rem 0.6rem;
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: 6px;
+    color: var(--admin-text);
+    font-weight: 700;
+}
+
+/* Formulario de eventos */
+.event-form {
+    background: var(--admin-card);
+    border: 1px solid var(--admin-border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 600px;
+    display: grid;
+    gap: 1rem;
+}

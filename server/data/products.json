@@ -1,15 +1,102 @@
 [
-  { "id": 1, "name": "Pastel de Papas Casero", "category": "Menú del Día", "oldPrice": 6500, "price": 6000, "featured": true, "description": "Porción abundante de pastel de papas gratinado recién horneado.", "urlImg": "images/products/pastel-papas.jpg" },
-  { "id": 2, "name": "Guiso de Lentejas", "category": "Menú del Día", "oldPrice": 6000, "price": 5000, "featured": true, "description": "Guiso tradicional con chorizo colorado, panceta y verduras.", "urlImg": "images/products/guiso-lentejas.jpg" },
-  { "id": 3, "name": "Sorrentinos con Bolognesa", "category": "Menú del Día", "oldPrice": 6000, "price": 5000, "featured": false, "description": "Sorrentinos de jamón y queso con salsa bolognesa casera.", "urlImg": "images/products/sorrentinos.jpg" },
-
-  { "id": 4, "name": "Super Pancho + Salsa Golf y Papas Pay", "category": "Comidas Rápidas", "oldPrice": null, "price": 3500, "featured": true, "description": "Salchicha larga en pan tibio con lluvia de papas pay y aderezos.", "urlImg": "images/products/super-pancho.jpg" },
-  { "id": 5, "name": "Empanadas de Carne (x2)", "category": "Comidas Rápidas", "oldPrice": 3200, "price": 2800, "featured": false, "description": "Dos empanadas criollas de carne cortada a cuchillo al horno.", "urlImg": "images/products/empanadas-carne.jpg" },
-  { "id": 6, "name": "Sándwich de Milanesa Completo", "category": "Comidas Rápidas", "oldPrice": 5500, "price": 4800, "featured": true, "description": "Milanesa de ternera en pan francés con lechuga, tomate, jamón y queso.", "urlImg": "images/products/sandwich-milanesa.jpg" },
-
-  { "id": 7, "name": "Lata Coca-Cola 350 ml", "category": "Bebidas", "oldPrice": null, "price": 1800, "featured": false, "description": "Gaseosa Coca-Cola bien fría en lata.", "urlImg": "images/products/coca-lata.jpg" },
-  { "id": 8, "name": "Jugo de Naranja Exprimido", "category": "Bebidas", "oldPrice": null, "price": 2200, "featured": false, "description": "Vaso grande de jugo natural exprimido en el momento.", "urlImg": "images/products/jugo-naranja.jpg" },
-
-  { "id": 9, "name": "Café con Leche + 2 Medialunas", "category": "Kiosco y Cafetería", "oldPrice": 3000, "price": 2500, "featured": false, "description": "Combo ideal para antes de entrar a cursar a la mañana o tarde.", "urlImg": "images/products/cafe-medialunas.jpg" },
-  { "id": 10, "name": "Alfajor Triple Chocolate", "category": "Kiosco y Cafetería", "oldPrice": null, "price": 1400, "featured": false, "description": "Alfajor triple relleno de dulce de leche con baño de chocolate.", "urlImg": "images/products/alfajor.jpg" }
+  {
+    "id": 1,
+    "name": "Pastel de Papas Casero",
+    "category": "Menú del Día",
+    "oldPrice": 6500,
+    "price": 6000,
+    "featured": true,
+    "description": "Porción abundante de pastel de papas gratinado recién horneado.",
+    "urlImg": "images/products/pastel-papas.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Guiso de Lentejas",
+    "category": "Menú del Día",
+    "oldPrice": 6000,
+    "price": 5000,
+    "featured": true,
+    "description": "Guiso tradicional con chorizo colorado, panceta y verduras.",
+    "urlImg": "images/products/guiso-lentejas.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Sorrentinos con Bolognesa",
+    "category": "Menú del Día",
+    "oldPrice": 6000,
+    "price": 5000,
+    "featured": false,
+    "description": "Sorrentinos de jamón y queso con salsa bolognesa casera.",
+    "urlImg": "images/products/sorrentinos.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Super Pancho + Salsa Golf y Papas Pay",
+    "category": "Comidas Rápidas",
+    "oldPrice": null,
+    "price": 3500,
+    "featured": true,
+    "description": "Salchicha larga en pan tibio con lluvia de papas pay y aderezos.",
+    "urlImg": "images/products/super-pancho.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Empanadas de Carne (x2)",
+    "category": "Comidas Rápidas",
+    "oldPrice": 3200,
+    "price": 2800,
+    "featured": false,
+    "description": "Dos empanadas criollas de carne cortada a cuchillo al horno.",
+    "urlImg": "images/products/empanadas-carne.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Sándwich de Milanesa Completo",
+    "category": "Comidas Rápidas",
+    "oldPrice": 5500,
+    "price": 4800,
+    "featured": true,
+    "description": "Milanesa de ternera en pan francés con lechuga, tomate, jamón y queso.",
+    "urlImg": "images/products/sandwich-milanesa.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Lata Coca-Cola 350 ml",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 1800,
+    "featured": false,
+    "description": "Gaseosa Coca-Cola bien fría en lata.",
+    "urlImg": "images/products/coca-lata.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Jugo de Naranja Exprimido",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 2200,
+    "featured": false,
+    "description": "Vaso grande de jugo natural exprimido en el momento.",
+    "urlImg": "images/products/jugo-naranja.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Café con Leche + 2 Medialunas",
+    "category": "Kiosco y Cafetería",
+    "oldPrice": 3000,
+    "price": 2500,
+    "featured": false,
+    "description": "Combo ideal para antes de entrar a cursar a la mañana o tarde.",
+    "urlImg": "images/products/cafe-medialunas.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Alfajor Triple Chocolate",
+    "category": "Kiosco y Cafetería",
+    "oldPrice": null,
+    "price": 1400,
+    "featured": false,
+    "description": "Alfajor triple relleno de dulce de leche con baño de chocolate.",
+    "urlImg": "images/products/alfajor.jpg"
+  }
 ]
