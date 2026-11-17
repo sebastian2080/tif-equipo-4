@@ -20,26 +20,26 @@ git clone [https://github.com/sebastian2080/tif-equipo-4.git]
 
 ```
 
-**2. Entrá a la carpeta del proyecto:** 🗂️
+**1. Entrá a la carpeta del proyecto:** 🗂️
 
 ```bash
 cd tif-equipo-4
 
 ```
 
-**3. Instalá las dependencias con npm:** 🛠️
+**2. Instalá las dependencias con npm:** 🛠️
 
 ```bash
 npm install
 
 ```
 
-**4. Configurá las variables de entorno (para Mercado Pago Sandbox):** 🔐
+**3. Configurá las variables de entorno (para Mercado Pago Sandbox):** 🔐
 
 * Duplicá el archivo `.env.example` y renombralo a `.env`.
 * Pegá tu Access Token de prueba (`TEST-...`) en `MP_ACCESS_TOKEN`.
 
-**5. Iniciá el servidor de desarrollo con npm:** 🏁
+**4. Iniciá el servidor de desarrollo con npm:** 🏁
 
 ```bash
 npm start
@@ -48,7 +48,7 @@ npm start
 
 *(O `npm run dev` si querés que se reinicie automáticamente al guardar cambios).*
 
-**6. Abrí el sitio en el navegador:** 🌐
+**5. Abrí el sitio en el navegador:** 🌐
 Entrá a [http://localhost:3000](http://localhost:3000)
 
 > ⚠️ **Importante:** El sitio debe abrirse siempre desde `http://localhost:3000`. Si abrís `index.html` con doble clic o con Live Server, los productos y eventos no van a cargar porque las páginas necesitan conectarse al servidor Node.js.
