@@ -36,5 +36,48 @@
     "paymentProvider": "Mercado Pago",
     "paymentStatus": "approved",
     "createdAt": "2026-11-14T21:09:55.916Z"
+  },
+  {
+    "orderId": "UB-1003",
+    "customerName": "Maxi",
+    "items": [
+      {
+        "id": 7,
+        "name": "Lata Coca-Cola 350 ml",
+        "price": 1800,
+        "quantity": 1
+      },
+      {
+        "id": 5,
+        "name": "Empanadas de Carne (x2)",
+        "price": 2800,
+        "quantity": 1
+      },
+      {
+        "id": 8,
+        "name": "Jugo de Naranja Exprimido",
+        "price": 2200,
+        "quantity": 1
+      },
+      {
+        "id": 9,
+        "name": "Café con Leche + 2 Medialunas",
+        "price": 2500,
+        "quantity": 1
+      },
+      {
+        "id": 10,
+        "name": "Alfajor Triple Chocolate",
+        "price": 1400,
+        "quantity": 1
+      }
+    ],
+    "total": 10700,
+    "modality": "Retiro en el local",
+    "pickupDate": "2026-11-24",
+    "pickupTime": "18:00",
+    "paymentProvider": "Mercado Pago",
+    "paymentStatus": "pending",
+    "createdAt": "2026-11-24T15:56:31.831Z"
   }
 ]
