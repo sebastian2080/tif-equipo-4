@@ -710,3 +710,40 @@ a {
     }
     .hero-slide, .hero-slide-image { min-height: 320px; height: auto; }
 }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-logo {
+    height: 44px;
+    width: auto;
+    max-height: 44px;
+    object-fit: contain;
+}
+/* Banner completo al 100% sin recortes */
+.hero-carousel,
+.hero-slider {
+    max-width: 1000px; /* Podés bajarlo a 850px o 900px si lo querés más chico */
+    margin: 20px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    height: auto !important;
+}
+
+.hero-slide {
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+    display: block !important;
+}
+
+.hero-slide-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: initial !important;
+    display: block !important;
+}

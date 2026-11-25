@@ -54,7 +54,7 @@
 
         .btn-print {
             background: #facc15;
-            color: #111315;
+            color: #000000;
             border: none;
             padding: 0.6rem 1.2rem;
             border-radius: 8px;
@@ -67,7 +67,7 @@
         .a4-sheet {
             width: 210mm;
             min-height: 297mm;
-            background-color: #141414;
+            background-color: #861602;
             color: #ffffff;
             position: relative;
             overflow: hidden;
@@ -117,7 +117,7 @@
         }
 
         .category-block {
-            background: rgba(18, 18, 18, 0.82);
+            background: rgba(0, 0, 0, 0.82);
             border: 1px solid rgba(250, 204, 21, 0.35);
             border-radius: 10px;
             padding: 10px 12px;
@@ -199,7 +199,7 @@
         <div>
             <strong>🖨️ Vista Previa Carta A4</strong>
             <span style="color: #9ca3af; font-size: 0.85rem; margin-left: 8px;">
-                (Plantilla Canva: <code>public/images/plantilla-carta.png</code>)
+                (Plantilla Canva: <code>public/images/carta.jpg</code>)
             </span>
         </div>
         <div class="toolbar-controls">
@@ -218,8 +218,8 @@
     <!-- Hoja A4 -->
     <main id="a4-sheet" class="a4-sheet">
         <header class="default-header">
-            <h1>🚌 ÚLTIMO BONDI</h1>
-            <p>Espacio Cultural & Gastronómico • Frente a UNPAZ • Carta Vigente al <span id="menu-date"></span></p>
+            <h1>MENÚ DIGITAL ÚLTIMO BONDI</h1>
+            <p>Espacio Cultural & Gastronómico • Frente a UNPAZ • <span id="menu-date"></span></p>
         </header>
 
         <section id="printable-menu-grid" class="menu-columns"></section>
@@ -237,8 +237,9 @@
             document.getElementById('menu-date').textContent = new Date().toLocaleDateString('es-AR');
 
             // 1. Verificar si la alumna subió la plantilla de Canva (public/images/plantilla-carta.png)
-            const templateImg = new Image();
-            templateImg.src = 'images/plantilla-carta.png';
+            // 1. Verificar si se subió la plantilla de Canva (public/images/carta.jpg)
+const templateImg = new Image();
+templateImg.src = 'images/carta.jpg';
             templateImg.onload = () => {
                 sheet.style.backgroundImage = `url('${templateImg.src}')`;
                 sheet.classList.add('has-canva-bg');

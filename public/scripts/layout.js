@@ -49,10 +49,10 @@ function renderHeader() {
         <div class="site-header">
             <div class="container navbar">
                 <!-- TODO EQUIPO 4: Reemplazar el badge "UB" por la imagen oficial del logo en public/images/ -->
-                <a href="index.html" class="brand">
-                    <span class="brand-badge">UB</span>
-                    <span class="brand-text">ÚLTIMO <span>BONDI</span></span>
-                </a>
+               <a href="index.html" class="brand">
+    <img src="images/logo.png" alt="Logo Último Bondi" class="brand-logo">
+    <span class="brand-text">ÚLTIMO <span>BONDI</span></span>
+</a>
 
                 <ul class="nav-links" id="nav-links">
                     ${navItems}
