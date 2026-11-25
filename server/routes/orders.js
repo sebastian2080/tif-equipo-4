@@ -68,8 +68,8 @@ router.post('/', async (req, res) => {
                         success: `${baseUrl}/menu.html?mp_status=approved&order=${orderNumber}`,
                         failure: `${baseUrl}/menu.html?mp_status=failure&order=${orderNumber}`,
                         pending: `${baseUrl}/menu.html?mp_status=pending&order=${orderNumber}`
-                    },
-                    auto_return: 'approved'
+                    }
+                    // auto_return: 'approved' -> comentado porque localhost no es HTTPS público
                 }
             });
 
