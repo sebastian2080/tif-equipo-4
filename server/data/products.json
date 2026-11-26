@@ -1,37 +1,47 @@
 [
   {
     "id": 1,
-    "name": "Pastel de Papas Casero",
+    "name": "Tortilla de papas con guarnición",
     "category": "Menú del Día",
-    "oldPrice": 6500,
-    "price": 6000,
+    "oldPrice": null,
+    "price": 6500,
     "featured": true,
-    "description": "Porción abundante de pastel de papas gratinado recién horneado.",
-    "urlImg": "images/products/pastel-papas.jpg"
+    "description": "Porción de tortilla de papas con guarnicion",
+    "urlImg": "images/products/tortilla-papas.jpg"
   },
   {
     "id": 2,
     "name": "Guiso de Lentejas",
     "category": "Menú del Día",
-    "oldPrice": 6000,
-    "price": 5000,
+    "oldPrice": null,
+    "price": 6500,
     "featured": true,
     "description": "Guiso tradicional con chorizo colorado, panceta y verduras.",
     "urlImg": "images/products/guiso-lentejas.jpg"
   },
   {
     "id": 3,
-    "name": "Sorrentinos con Bolognesa",
+    "name": "pastel de papas",
     "category": "Menú del Día",
-    "oldPrice": 6000,
-    "price": 5000,
+    "oldPrice":null,
+    "price": 6500,
     "featured": false,
-    "description": "Sorrentinos de jamón y queso con salsa bolognesa casera.",
-    "urlImg": "images/products/sorrentinos.jpg"
+    "description": "Pastel de papas casero gratinado.",
+    "urlImg": "images/products/pastel-papas.jpg"
+  },
+   {
+    "id": 4,
+    "name": "churrasquito a la riojana",
+    "category": "Menú del Día",
+    "oldPrice":null,
+    "price": 7500,
+    "featured": false,
+    "description": "Churrasquito a la riojana con guarnición.",
+    "urlImg": "images/products/churrasquito.jpg"
   },
   {
-    "id": 4,
-    "name": "Super Pancho + Salsa Golf y Papas Pay",
+    "id": 5,
+    "name": "Super Pancho + aderezos y Papas Pay",
     "category": "Comidas Rápidas",
     "oldPrice": null,
     "price": 3500,
@@ -40,57 +50,87 @@
     "urlImg": "images/products/super-pancho.jpg"
   },
   {
-    "id": 5,
+    "id": 6,
     "name": "Empanadas de Carne (x2)",
     "category": "Comidas Rápidas",
-    "oldPrice": 3200,
-    "price": 2800,
+    "oldPrice": null,
+    "price": 4800,
     "featured": false,
     "description": "Dos empanadas criollas de carne cortada a cuchillo al horno.",
     "urlImg": "images/products/empanadas-carne.jpg"
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Sándwich de Milanesa Completo",
     "category": "Comidas Rápidas",
-    "oldPrice": 5500,
-    "price": 4800,
+    "oldPrice": null,
+    "price": 6500,
     "featured": true,
     "description": "Milanesa de ternera en pan francés con lechuga, tomate, jamón y queso.",
     "urlImg": "images/products/sandwich-milanesa.jpg"
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "Lata Coca-Cola 350 ml",
     "category": "Bebidas",
     "oldPrice": null,
-    "price": 1800,
+    "price": 2500,
     "featured": false,
     "description": "Gaseosa Coca-Cola bien fría en lata.",
     "urlImg": "images/products/coca-lata.jpg"
   },
   {
-    "id": 8,
-    "name": "Jugo de Naranja Exprimido",
+    "id": 9,
+    "name": "Jugo 200ml",
     "category": "Bebidas",
     "oldPrice": null,
-    "price": 2200,
+    "price": 1200,
     "featured": false,
-    "description": "Vaso grande de jugo natural exprimido en el momento.",
+    "description": "jugo de naranja envasado de 200 ml.",
     "urlImg": "images/products/jugo-naranja.jpg"
   },
   {
-    "id": 9,
-    "name": "Café con Leche + 2 Medialunas",
-    "category": "Kiosco y Cafetería",
-    "oldPrice": 3000,
-    "price": 2500,
+    "id": 10,
+    "name": "Cerveza de 1 lt",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 4700,
     "featured": false,
-    "description": "Combo ideal para antes de entrar a cursar a la mañana o tarde.",
-    "urlImg": "images/products/cafe-medialunas.jpg"
+    "description": "Cerveza de 1 litro.",
+    "urlImg": "images/products/cerveza.jpg"
   },
   {
-    "id": 10,
+    "id": 11,
+    "name": "té, infusion de hirbas",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 1500,
+    "featured": false,
+    "description": "infusion de hiervas o té a elección.",
+    "urlImg": "images/products/té.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Coca cola de 2.25 lt",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 6500,
+    "featured": false,
+    "description": "Gaseosa Coca-Cola bien fría en botella de 2.25 lt.",
+    "urlImg": "images/products/Coca 2.25 lt.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Jarra de fernet con coca de 1/2 lt",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 14000,
+    "featured": false,
+    "description": "fernet con coca preparado en jarra de 500 ml.",
+    "urlImg": "images/products/fernuco.jpg"
+  },
+  {
+    "id": 14,
     "name": "Alfajor Triple Chocolate",
     "category": "Kiosco y Cafetería",
     "oldPrice": null,
@@ -99,5 +139,6 @@
     "description": "Alfajor triple relleno de dulce de leche con baño de chocolate.",
     "urlImg": "images/products/alfajor.jpg"
   }
+    
   
 ]
