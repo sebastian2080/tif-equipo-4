@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         container.innerHTML = events.map(ev => `
             <article class="info-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
+                <div> 
+                ${ev.image ? `<img src="${ev.image}" alt="${ev.title}" style="width: 100%; aspect-ratio: 4/5; object-fit: contain; border-radius: 8px; margin-bottom: 1rem;">` : ''}
                     <div class="event-meta">
                         <span>📅 ${ev.date}</span>
                         <span>🕒 ${ev.time}</span>
