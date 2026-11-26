@@ -3,15 +3,18 @@
   {
     "id": 4,
     "title": "Proyección fin de cuatri",
+    "image": "/images/eventos/fincuatri.jpeg",
     "date": "27 de noviembre de 2026",
     "time": "20:00 hs",
     "category": "Cine y Cultura",
     "description": "Una noche de cine, encuentro y celebración organizada por el CEEPEIT para despedir la cursada y compartir las producciones audiovisuales realizadas por los estudiantes durante el año.",
     "entry": "Consultar ingreso"
+   
   },
   {
     "id": 5,
     "title": "Especial Argenween - ¿Amargo o retruco?",
+    "image": "/images/eventos/30deoctubre.jpeg",
     "date": "30 de octubre de 2026",
     "time": "21:30 hs",
     "category": "Streaming y Cultura",
@@ -21,6 +24,7 @@
   {
     "id": 6,
     "title": "Festival Último Bondi Stream",
+    "image": "/images/eventos/stream.jpeg",
     "date": "10 de julio de 2026",
     "time": "20:00 hs",
     "category": "Música en Vivo",
@@ -30,6 +34,7 @@
   {
     "id": 2,
     "title": "Noche del León",
+    "image": "/images/eventos/leon.jpeg",
     "date": "29 de agosto de 2025",
     "time": "19:00 hs",
     "category": "Encuentro Musical",
