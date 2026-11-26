@@ -1,35 +1,31 @@
+
 [
   {
     "id": 1,
     "name": "pastel de papas gratinado",
     "category": "Menú del Día",
     "oldPrice": null,
-    "price": 6500,
+    "price": 7500,
     "featured": true,
-
     "description": "Porción abundante de pastel de papas gratinado recién horneado.",
     "urlImg": "images/products/pastel-papas.jfif"
-
-    
   },
   {
     "id": 2,
     "name": "Guiso de Lentejas",
     "category": "Menú del Día",
     "oldPrice": null,
-    "price": 6500,
+    "price": 7500,
     "featured": true,
     "description": "Guiso tradicional con chorizo colorado, panceta y verduras.",
     "urlImg": "images/products/guiso-lentejas.jfif"
   },
   {
     "id": 3,
-
     "name": "Churrasquito a La Riojana",
-
     "category": "Menú del Día",
-    "oldPrice":null,
-    "price": 6500,
+    "oldPrice": null,
+    "price": 8500,
     "featured": false,
     "description": "Churrasquito a la riojana con papas fritas.",
     "urlImg": "images/products/Churrasquito a La Riojana.jfif"
@@ -37,16 +33,17 @@
   {
     "id": 4,
     "name": "Super Pancho + bebida Brio",
-
+    "oldPrice": null,
+    "price": 2500,
     "description": "Pastel de papas casero gratinado.",
     "urlImg": "images/products/super-pancho.png"
   },
-   {
+  {
     "id": 4,
     "name": "churrasquito a la riojana",
     "category": "Menú del Día",
-    "oldPrice":null,
-    "price": 7500,
+    "oldPrice": null,
+    "price": 8500,
     "featured": false,
     "description": "Churrasquito a la riojana con guarnición.",
     "urlImg": "images/products/churrasquito.jpg"
@@ -54,10 +51,9 @@
   {
     "id": 5,
     "name": "Super Pancho + aderezos y Papas Pay",
-
     "category": "Comidas Rápidas",
     "oldPrice": null,
-    "price": 2500,
+    "price": 2000,
     "featured": true,
     "description": "Salchicha larga en pan tibio con lluvia de papas pay y aderezos.",
     "urlImg": "images/products/super-pancho.png"
@@ -67,24 +63,22 @@
     "name": "Empanadas de Carne (x2)",
     "category": "Comidas Rápidas",
     "oldPrice": null,
-    "price": 4800,
+    "price": 3500,
     "featured": false,
     "description": "Dos empanadas criollas de carne cortada a cuchillo al horno.",
     "urlImg": "images/products/empanadas.jfif"
   },
   {
-
     "id": 6,
     "name": "Sándwich de Milanesa Completo con papas",
     "category": "Comidas Rápidas",
-    "oldPrice": 10500,
+    "oldPrice": null,
     "price": 9500,
-   "featured": true,
+    "featured": true,
     "description": "Milanesa de ternera en pan francés con lechuga, tomate, jamón y queso.",
     "urlImg": "images/products/sandwich-milanesa.jfif"
   },
   {
-
     "id": 7,
     "name": "Coca Cola 600 ml",
     "category": "Bebidas",
@@ -95,27 +89,21 @@
     "urlImg": "images/products/Coca Cola 600 ml.jfif"
   },
   {
-
     "id": 8,
     "name": "Jugo 200 ml",
-
     "category": "Bebidas",
     "oldPrice": null,
     "price": 1200,
     "featured": false,
-
     "description": "Jugo 200 ml Baggio podes pedirlo en los sabores: manzana, naranja o multifrutal.",
     "urlImg": "images/products/Jugo 200 ml.jfif"
-
   },
-  
-
   {
     "id": 10,
     "name": "Cerveza 1L",
-"category": "Bebidas",
+    "category": "Bebidas",
     "oldPrice": null,
-    "price": 1200,
+    "price": 5500,
     "featured": false,
     "description": "Cerveza fria de 1L.",
     "urlImg": "images/products/cerveza.jpg"
@@ -145,7 +133,7 @@
     "name": "Jarra de fernet con coca de 1/2 lt",
     "category": "Bebidas",
     "oldPrice": null,
-    "price": 14000,
+    "price": 6500,
     "featured": false,
     "description": "fernet con coca preparado en jarra de 500 ml.",
     "urlImg": "images/products/fernuco.jpg"
@@ -153,10 +141,9 @@
   {
     "id": 14,
     "name": "Medialuna de jamon y queso",
-
     "category": "Kiosco y Cafetería",
     "oldPrice": null,
-    "price": 1400,
+    "price": 1200,
     "featured": false,
     "description": "Medialuna con Jamon y Queso horneada.",
     "urlImg": "images/products/Medialuna con Jamon y Queso.jfif"
@@ -165,8 +152,8 @@
     "id": 11,
     "name": "Pizza Muzzarella",
     "category": "Pizzas",
-    "oldPrice": 6500,
-    "price": 6000,
+    "oldPrice": null,
+    "price": 9000,
     "featured": true,
     "description": "Pizza Muzzarella 8 porciones.",
     "urlImg": "images/products/pizza muzzarella.jfif"
@@ -175,8 +162,8 @@
     "id": 12,
     "name": "Pizza Napolitana",
     "category": "Pizzas",
-    "oldPrice": 6000,
-    "price": 5000,
+    "oldPrice": null,
+    "price": 10000,
     "featured": true,
     "description": "Pizza Napolitana 8 porciones.",
     "urlImg": "images/products/pizza napolitana.jfif"
@@ -185,8 +172,8 @@
     "id": 13,
     "name": "Pebete de jamon y queso",
     "category": "Sandwiches",
-    "oldPrice": 6000,
-    "price": 5000,
+    "oldPrice": null,
+    "price": 3000,
     "featured": false,
     "description": "pebete de miga suave con jamon y queso.",
     "urlImg": "images/products/pebete.jfif"
@@ -205,8 +192,8 @@
     "id": 15,
     "name": "Lomito completo con papas fritas",
     "category": "Sandwiches",
-    "oldPrice": 3200,
-    "price": 2800,
+    "oldPrice": null,
+    "price": 10500,
     "featured": false,
     "description": "sandwich de lomo completo con papas fritas.",
     "urlImg": "images/products/lomito completo.jfif"
@@ -215,8 +202,8 @@
     "id": 16,
     "name": "Tarta individual",
     "category": "Comidas Rápidas",
-    "oldPrice": 5500,
-    "price": 4800,
+    "oldPrice": null,
+    "price": 5500,
     "featured": true,
     "description": "tarta de verdura individual.",
     "urlImg": "images/products/tarta individual.jfif"
@@ -226,7 +213,7 @@
     "name": "sprite 600 ml",
     "category": "Bebidas",
     "oldPrice": null,
-    "price": 1800,
+    "price": 2500,
     "featured": false,
     "description": "Gaseosa Sprite bien fría en lata.",
     "urlImg": "images/products/sprite 600 ml.jfif"
@@ -236,17 +223,17 @@
     "name": "Jarra de fernet con coca",
     "category": "Bebidas",
     "oldPrice": null,
-    "price": 2200,
+    "price": 12000,
     "featured": false,
     "description": "Jarra de fernet con coca y mucho hielo .",
-     "urlImg": "images/products/Jarra de Fernet.jfif"
+    "urlImg": "images/products/Jarra de Fernet.jfif"
   },
   {
     "id": 19,
     "name": "coca cola 1L",
     "category": "Bebidas",
-    "oldPrice": 3000,
-    "price": 2500,
+    "oldPrice": null,
+    "price": 3500,
     "featured": false,
     "description": "coca cola bien fria en botella de vidrio de 1 litro.",
     "urlImg": "images/products/coca cola 1l.jfif"
@@ -256,11 +243,9 @@
     "name": "Agua saborizada",
     "category": "Bebidas",
     "oldPrice": null,
-    "price": 1400,
+    "price": 3000,
     "featured": false,
     "description": "Agua saborizada natural.",
     "urlImg": "images/products/Agua Saborizada 1.5 L.jfif"
   }
-    
-  
 ]
