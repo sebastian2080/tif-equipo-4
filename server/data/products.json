@@ -6,8 +6,13 @@
     "oldPrice": null,
     "price": 6500,
     "featured": true,
+<<<<<<< HEAD
+    "description": "Porción abundante de pastel de papas gratinado recién horneado.",
+    "urlImg": "images/products/pastel-papas.jfif"
+=======
     "description": "Porción de tortilla de papas con guarnicion",
     "urlImg": "images/products/tortilla-papas.jpg"
+>>>>>>> origin/main
   },
   {
     "id": 2,
@@ -17,15 +22,27 @@
     "price": 6500,
     "featured": true,
     "description": "Guiso tradicional con chorizo colorado, panceta y verduras.",
-    "urlImg": "images/products/guiso-lentejas.jpg"
+    "urlImg": "images/products/guiso-lentejas.jfif"
   },
   {
     "id": 3,
+<<<<<<< HEAD
+    "name": "Churrasquito a La Riojana",
+=======
     "name": "pastel de papas",
+>>>>>>> origin/main
     "category": "Menú del Día",
     "oldPrice":null,
     "price": 6500,
     "featured": false,
+<<<<<<< HEAD
+    "description": "Churrasquito a la riojana con papas fritas.",
+    "urlImg": "images/products/Churrasquito a La Riojana.jfif"
+  },
+  {
+    "id": 4,
+    "name": "Super Pancho + bebida Brio",
+=======
     "description": "Pastel de papas casero gratinado.",
     "urlImg": "images/products/pastel-papas.jpg"
   },
@@ -42,12 +59,13 @@
   {
     "id": 5,
     "name": "Super Pancho + aderezos y Papas Pay",
+>>>>>>> origin/main
     "category": "Comidas Rápidas",
     "oldPrice": null,
-    "price": 3500,
+    "price": 2500,
     "featured": true,
     "description": "Salchicha larga en pan tibio con lluvia de papas pay y aderezos.",
-    "urlImg": "images/products/super-pancho.jpg"
+    "urlImg": "images/products/super-pancho.png"
   },
   {
     "id": 6,
@@ -57,37 +75,60 @@
     "price": 4800,
     "featured": false,
     "description": "Dos empanadas criollas de carne cortada a cuchillo al horno.",
-    "urlImg": "images/products/empanadas-carne.jpg"
+    "urlImg": "images/products/empanadas.jfif"
   },
   {
+<<<<<<< HEAD
+    "id": 6,
+    "name": "Sándwich de Milanesa Completo con papas",
+    "category": "Comidas Rápidas",
+    "oldPrice": 10500,
+    "price": 9500,
+=======
     "id": 7,
     "name": "Sándwich de Milanesa Completo",
     "category": "Comidas Rápidas",
     "oldPrice": null,
     "price": 6500,
+>>>>>>> origin/main
     "featured": true,
     "description": "Milanesa de ternera en pan francés con lechuga, tomate, jamón y queso.",
-    "urlImg": "images/products/sandwich-milanesa.jpg"
+    "urlImg": "images/products/sandwich-milanesa.jfif"
   },
   {
+<<<<<<< HEAD
+    "id": 7,
+    "name": "Coca Cola 600 ml",
+=======
     "id": 8,
     "name": "Lata Coca-Cola 350 ml",
+>>>>>>> origin/main
     "category": "Bebidas",
     "oldPrice": null,
     "price": 2500,
     "featured": false,
-    "description": "Gaseosa Coca-Cola bien fría en lata.",
-    "urlImg": "images/products/coca-lata.jpg"
+    "description": "Gaseosa Coca-Cola bien fría.",
+    "urlImg": "images/products/Coca Cola 600 ml.jfif"
   },
   {
+<<<<<<< HEAD
+    "id": 8,
+    "name": "Jugo 200 ml",
+=======
     "id": 9,
     "name": "Jugo 200ml",
+>>>>>>> origin/main
     "category": "Bebidas",
     "oldPrice": null,
     "price": 1200,
     "featured": false,
+<<<<<<< HEAD
+    "description": "Jugo 200 ml Baggio podes pedirlo en los sabores: manzana, naranja o multifrutal.",
+    "urlImg": "images/products/Jugo 200 ml.jfif"
+=======
     "description": "jugo de naranja envasado de 200 ml.",
     "urlImg": "images/products/jugo-naranja.jpg"
+>>>>>>> origin/main
   },
   {
     "id": 10,
@@ -96,6 +137,14 @@
     "oldPrice": null,
     "price": 4700,
     "featured": false,
+<<<<<<< HEAD
+    "description": "Combo ideal para antes de entrar a cursar a la mañana o tarde.",
+    "urlImg": "images/products/medialuna.jfif"
+  },
+  {
+    "id": 10,
+    "name": "Medialuna con Jamon y Queso",
+=======
     "description": "Cerveza de 1 litro.",
     "urlImg": "images/products/cerveza.jpg"
   },
@@ -132,12 +181,113 @@
   {
     "id": 14,
     "name": "Alfajor Triple Chocolate",
+>>>>>>> origin/main
     "category": "Kiosco y Cafetería",
     "oldPrice": null,
     "price": 1400,
     "featured": false,
-    "description": "Alfajor triple relleno de dulce de leche con baño de chocolate.",
-    "urlImg": "images/products/alfajor.jpg"
+    "description": "Medialuna con Jamon y Queso horneada.",
+    "urlImg": "images/products/Medialuna con Jamon y Queso.jfif"
+  },
+  {
+    "id": 11,
+    "name": "Pizza Muzzarella",
+    "category": "Pizzas",
+    "oldPrice": 6500,
+    "price": 6000,
+    "featured": true,
+    "description": "Pizza Muzzarella 8 porciones.",
+    "urlImg": "images/products/pizza muzzarella.jfif"
+  },
+  {
+    "id": 12,
+    "name": "Pizza Napolitana",
+    "category": "Pizzas",
+    "oldPrice": 6000,
+    "price": 5000,
+    "featured": true,
+    "description": "Pizza Napolitana 8 porciones.",
+    "urlImg": "images/products/pizza napolitana.jfif"
+  },
+  {
+    "id": 13,
+    "name": "Pebete de jamon y queso",
+    "category": "Sandwiches",
+    "oldPrice": 6000,
+    "price": 5000,
+    "featured": false,
+    "description": "pebete de miga suave con jamon y queso.",
+    "urlImg": "images/products/pebete.jfif"
+  },
+  {
+    "id": 14,
+    "name": "Pan araabe con jamon y queso, horneado",
+    "category": "Sandwiches",
+    "oldPrice": null,
+    "price": 3500,
+    "featured": true,
+    "description": "sandwich de pan arabe con jamon y queso calentito.",
+    "urlImg": "images/products/panarabe.jfif"
+  },
+  {
+    "id": 15,
+    "name": "Lomito completo con papas fritas",
+    "category": "Sandwiches",
+    "oldPrice": 3200,
+    "price": 2800,
+    "featured": false,
+    "description": "sandwich de lomo completo con papas fritas.",
+    "urlImg": "images/products/lomito completo.jfif"
+  },
+  {
+    "id": 16,
+    "name": "Tarta individual",
+    "category": "Comidas Rápidas",
+    "oldPrice": 5500,
+    "price": 4800,
+    "featured": true,
+    "description": "tarta de verdura individual.",
+    "urlImg": "images/products/tarta individual.jfif"
+  },
+  {
+    "id": 17,
+    "name": "sprite 600 ml",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 1800,
+    "featured": false,
+    "description": "Gaseosa Sprite bien fría en lata.",
+    "urlImg": "images/products/sprite 600 ml.jfif"
+  },
+  {
+    "id": 18,
+    "name": "Jarra de fernet con coca",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 2200,
+    "featured": false,
+    "description": "Jarra de fernet con coca y mucho hielo .",
+     "urlImg": "images/products/Jarra de Fernet.jfif"
+  },
+  {
+    "id": 19,
+    "name": "coca cola 1L",
+    "category": "Bebidas",
+    "oldPrice": 3000,
+    "price": 2500,
+    "featured": false,
+    "description": "coca cola bien fria en botella de vidrio de 1 litro.",
+    "urlImg": "images/products/coca cola 1l.jfif"
+  },
+  {
+    "id": 20,
+    "name": "Agua saborizada",
+    "category": "Bebidas",
+    "oldPrice": null,
+    "price": 1400,
+    "featured": false,
+    "description": "Agua saborizada natural.",
+    "urlImg": "images/products/Agua Saborizada 1.5 L.jfif"
   }
     
   
