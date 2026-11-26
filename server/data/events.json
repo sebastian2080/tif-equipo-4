@@ -1,29 +1,39 @@
+
 [
   {
-    "id": 1,
-    "title": "Noche Ricotera - Edición Día de la Lealtad",
-    "date": "16 de Octubre",
-    "time": "21:00 hs",
+    "id": 4,
+    "title": "Proyección fin de cuatri",
+    "date": "27 de noviembre de 2026",
+    "time": "20:00 hs",
+    "category": "Cine y Cultura",
+    "description": "Una noche de cine, encuentro y celebración organizada por el CEEPEIT para despedir la cursada y compartir las producciones audiovisuales realizadas por los estudiantes durante el año.",
+    "entry": "Consultar ingreso"
+  },
+  {
+    "id": 5,
+    "title": "Especial Argenween - ¿Amargo o retruco?",
+    "date": "30 de octubre de 2026",
+    "time": "21:30 hs",
+    "category": "Streaming y Cultura",
+    "description": "Programa especial en vivo de Último Bondi Stream dedicado a los mitos y leyendas argentinas.",
+    "entry": "Entrada libre y gratuita"
+  },
+  {
+    "id": 6,
+    "title": "Festival Último Bondi Stream",
+    "date": "10 de julio de 2026",
+    "time": "20:00 hs",
     "category": "Música en Vivo",
-    "description": "Tributo acústico, mística redonda, barra económica y comidas populares frente a la UNPAZ.",
+    "description": "Festival cultural en celebración del décimo programa de Último Bondi Stream, con las bandas Extraños, Falso Contacto y Salvage. Música en vivo, streaming, sorteos, promociones, comidas y bebidas.",
     "entry": "Entrada libre y gratuita"
   },
   {
     "id": 2,
-    "title": "Noche del León - Acústico",
-    "date": "29 de Agosto",
+    "title": "Noche del León",
+    "date": "29 de agosto de 2025",
     "time": "19:00 hs",
-    "category": "Peña Cultural",
-    "description": "Encuentro musical abierto con artistas locales de José C. Paz y micrófono abierto.",
-    "entry": "Entrada libre y gratuita"
-  },
-  {
-    "id": 3,
-    "title": "Especial Videojuegos & Torneo",
-    "date": "28 de Septiembre",
-    "time": "18:00 hs",
-    "category": "Comunidad",
-    "description": "Tarde de consolas, torneos relámpago entre estudiantes y promos en panchos y bebidas.",
-    "entry": "Inscripción en barra"
+    "category": "Encuentro Musical",
+    "description": "Una noche dedicada a la música de Leo Mattioli, para disfrutar entre amigos en el espacio cultural Último Bondi.",
+    "entry": "Consultar ingreso"
   }
 ]
