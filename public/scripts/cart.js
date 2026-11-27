@@ -25,8 +25,31 @@ function addToCart(product) {
         });
     }
     saveCart();
-    openCartModal();
+    showCartToast(product.name);
 }
+
+function showCartToast(productName) {
+    let toast = document.getElementById('cart-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'cart-toast';
+        toast.className = 'cart-toast';
+        document.body.appendChild(toast);
+    }
+
+    toast.innerHTML = `
+        <span>✔ <strong>${productName}</strong> sumado al pedido</span>
+        <button type="button" onclick="openCartModal()">Ver carrito</button>
+    `;
+
+    toast.classList.add('show');
+
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
 
 function changeQuantity(id, delta) {
     const item = cart.find(p => p.id === id);
