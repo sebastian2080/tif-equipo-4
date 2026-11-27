@@ -95,9 +95,14 @@ function renderCartContent() {
                 <input type="date" id="pickup-date" class="input-field" required>
                 <input type="time" id="pickup-time" class="input-field" value="18:00" required>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; background-color: #009ee3; color: #fff;">
-                💳 Pagar con Mercado Pago ($${total})
-            </button>
+           <label for="payment-method">Método de pago:</label>
+<select id="payment-method" class="select-field" required>
+    <option value="mercadopago">💳 Pagar con Mercado Pago</option>
+    <option value="local">🏪 Pagar en el local</option>
+</select>
+<button type="submit" class="btn btn-primary" style="width: 100%;">
+    Confirmar pedido ($${total})
+</button>
         </form>
     `;
 
@@ -116,6 +121,7 @@ async function processMercadoPagoOrder(total) {
     const modality = document.getElementById('order-modality').value;
     const pickupDate = document.getElementById('pickup-date').value;
     const pickupTime = document.getElementById('pickup-time').value;
+    const paymentMethod = document.getElementById('payment-method').value;
 
     try {
         const response = await fetch('/api/orders', {
@@ -127,13 +133,19 @@ async function processMercadoPagoOrder(total) {
                 total,
                 modality,
                 pickupDate,
-                pickupTime
+                pickupTime,
+                paymentMethod
             })
         });
 
         const data = await response.json();
         if (!response.ok) throw new Error(data.error || 'Error al procesar pago');
-
+        if (paymentMethod === 'local') {
+            cart = [];
+            saveCart();
+            renderLocalReceipt(data.order);
+            return;
+        }
         // Si el equipo configuró MP_ACCESS_TOKEN en .env, redirige al Checkout Pro real/sandbox
         if (data.initPoint) {
             window.location.href = data.initPoint;
@@ -148,7 +160,48 @@ async function processMercadoPagoOrder(total) {
         alert('Hubo un problema al conectar con el servidor: ' + err.message);
     }
 }
+function renderLocalReceipt(order) {
+    const modal = document.getElementById('cart-modal');
+    const body = document.getElementById('cart-modal-body');
+    if (!body) return;
 
+    const summaryList = order.items
+        .map(i => `<li>${i.quantity}x ${i.name} ($${i.price * i.quantity})</li>`)
+        .join('');
+
+    const waText = encodeURIComponent(
+        `Hola Último Bondi! Confirmé mi pedido con pago en el local.\nOrden: *${order.orderId}*\nCliente: ${order.customerName}\nModalidad: ${order.modality}\nFecha: ${order.pickupDate} a las ${order.pickupTime} hs\nTotal pendiente de pago: $${order.total}`
+    );
+
+    body.innerHTML = `
+        <div class="mp-receipt">
+            <span class="mp-badge">Pago pendiente en el local</span>
+            <h3 style="color: var(--color-success);">
+                ✔ ¡Pedido confirmado!
+            </h3>
+            <p>Orden N° <strong>${order.orderId}</strong></p>
+            <p>Cliente: <strong>${order.customerName}</strong></p>
+            <p>Modalidad: ${order.modality}</p>
+            <p>Fecha: ${order.pickupDate} - ${order.pickupTime} hs</p>
+
+            <div style="text-align: left; padding: 1rem;">
+                <strong>Resumen del pedido:</strong>
+                <ul>${summaryList}</ul>
+            </div>
+
+            <h3 style="color: var(--color-primary);">
+                Total a pagar: $${order.total}
+            </h3>
+            <p>Aboná tu pedido directamente en el local.</p>
+
+            <a href="https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${waText}" target="_blank" class="btn btn-primary" style="width: 100%; background-color: #25D366; color: #121212;">
+                📲 Enviar pedido por WhatsApp
+            </a>
+        </div>
+    `;
+
+    if (modal) modal.classList.add('open');
+}
 function renderApprovedReceipt(order) {
     const modal = document.getElementById('cart-modal');
     const body = document.getElementById('cart-modal-body');

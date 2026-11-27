@@ -20,8 +20,7 @@ router.get('/', (req, res) => {
    - Si todavía no cargaron el token, funciona en modo simulador local.
    ============================================================================ */
 router.post('/', async (req, res) => {
-    const { items, total, modality, pickupDate, pickupTime, customerName } = req.body;
-
+const { items, total, modality, pickupDate, pickupTime, customerName, paymentMethod = 'mercadopago' } = req.body;
     if (!items || items.length === 0 || !total) {
         return res.status(400).json({ error: 'Faltan datos obligatorios del pedido.' });
     }
@@ -39,16 +38,16 @@ router.post('/', async (req, res) => {
         modality: modality || 'Retiro en el local',
         pickupDate: pickupDate || 'Hoy',
         pickupTime: pickupTime || '18:00',
-        paymentProvider: 'Mercado Pago',
-        paymentStatus: hasValidToken ? 'pending' : 'approved',
+       paymentProvider: paymentMethod === 'local' ? 'Pago en el local' : 'Mercado Pago',
+paymentStatus: paymentMethod === 'local' ? 'pending' : (hasValidToken ? 'pending' : 'approved'),
         createdAt: new Date().toISOString()
     };
 
     try {
         let initPoint = null;
 
-        if (hasValidToken) {
-            const client = new MercadoPagoConfig({ accessToken: token });
+if (hasValidToken && paymentMethod !== 'local') {
+                const client = new MercadoPagoConfig({ accessToken: token });
             const preference = new Preference(client);
             const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
 
@@ -83,9 +82,11 @@ router.post('/', async (req, res) => {
         fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2));
 
         res.status(201).json({
-            message: hasValidToken
-                ? 'Preferencia de Mercado Pago generada'
-                : 'Orden registrada en modo simulador (falta configurar MP_ACCESS_TOKEN en .env)',
+            message: paymentMethod === 'local'
+    ? 'Pedido registrado. Pago pendiente en el local.'
+    : hasValidToken
+        ? 'Preferencia de Mercado Pago generada'
+        : 'Orden registrada en modo simulador (falta configurar MP_ACCESS_TOKEN en .env)',
             order: newOrder,
             initPoint
         });
