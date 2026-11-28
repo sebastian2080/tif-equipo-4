@@ -40,7 +40,7 @@ function renderHeader() {
 
     const navItems = SITE_CONFIG.menu.map(item => {
         const isActive = currentPage === item.href ? 'active' : '';
-        return `<li><a href="item.href"class="{isActive}">${item.label}</a></li>`;
+        return `<li><a href="${item.href}" class="${isActive}">${item.label}</a></li>`;
     }).join('');
 
     header.innerHTML = `
@@ -49,11 +49,10 @@ function renderHeader() {
         </div>
         <div class="site-header">
             <div class="container navbar">
-                <!-- TODO EQUIPO 4: Reemplazar el badge "UB" por la imagen oficial del logo en public/images/ -->
-               <a href="index.html" class="brand">
-    <img src="images/logo.png" alt="Logo Último Bondi" class="brand-logo">
-    <span class="brand-text">ÚLTIMO <span>BONDI</span></span>
-</a>
+                <a href="index.html" class="brand">
+                    <img src="images/logo.png" alt="Logo Último Bondi" class="brand-logo">
+                    <span class="brand-text">ÚLTIMO <span>BONDI</span></span>
+                </a>
 
                 <ul class="nav-links" id="nav-links">
                     ${navItems}
@@ -85,7 +84,7 @@ function renderFooter() {
     if (!footer) return;
 
     const links = SITE_CONFIG.menu.map(item =>
-        `<li><a href="item.href">{item.label}</a></li>`
+        `<li><a href="${item.href}">${item.label}</a></li>`
     ).join('');
 
     footer.innerHTML = `
@@ -108,7 +107,7 @@ function renderFooter() {
                             <li>📍 ${SITE_CONFIG.address}</li>
                             <li>🕒 ${SITE_CONFIG.hours}</li>
                             <li>📱 WhatsApp: ${SITE_CONFIG.phone}</li>
-                            <li>📸 <a href="SITECONFIG.instagramUrl"target="blank">{SITE_CONFIG.instagram}</a></li>
+                            <li>📸 <a href="${SITE_CONFIG.instagramUrl}" target="_blank" rel="noopener">${SITE_CONFIG.instagram}</a></li>
                             <li><a href="admin.html">⚙️ Panel Coordinadores</a></li>
                         </ul>
                     </div>
@@ -145,14 +144,14 @@ function renderCartModal() {
         if (e.target === modal) modal.classList.remove('open');
     });
 }
+
 function renderWhatsAppFloat() {
     if (document.getElementById('wsp-float-btn')) return;
 
-    const mensaje = encodeURIComponent('Hola Último Bondi! Quiero hacer una consulta.');
     const btn = document.createElement('a');
     btn.id = 'wsp-float-btn';
     btn.className = 'wsp-float';
-    btn.href = `https://wa.link/k7hj2c`;
+    btn.href = 'https://wa.link/k7hj2c';
     btn.target = '_blank';
     btn.rel = 'noopener';
     btn.setAttribute('aria-label', 'Contactar por WhatsApp');
@@ -164,4 +163,3 @@ function renderWhatsAppFloat() {
 
     document.body.appendChild(btn);
 }
-

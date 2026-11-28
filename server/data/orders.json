@@ -79,5 +79,24 @@
     "paymentProvider": "Mercado Pago",
     "paymentStatus": "pending",
     "createdAt": "2026-11-24T15:56:31.831Z"
+  },
+  {
+    "orderId": "UB-1004",
+    "customerName": "maxi",
+    "items": [
+      {
+        "id": 1,
+        "name": "Pastel de Papas Casero",
+        "price": 6000,
+        "quantity": 1
+      }
+    ],
+    "total": 6000,
+    "modality": "Retiro en el local",
+    "pickupDate": "2026-11-24",
+    "pickupTime": "18:00",
+    "paymentProvider": "Mercado Pago",
+    "paymentStatus": "pending",
+    "createdAt": "2026-11-24T17:13:30.035Z"
   }
 ]
