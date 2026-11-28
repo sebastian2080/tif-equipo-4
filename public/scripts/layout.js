@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderHeader();
     renderFooter();
     renderCartModal();
+    renderWhatsAppFloat();
     if (typeof updateCartBadge === 'function') {
         updateCartBadge();
     }
@@ -39,7 +40,7 @@ function renderHeader() {
 
     const navItems = SITE_CONFIG.menu.map(item => {
         const isActive = currentPage === item.href ? 'active' : '';
-        return `<li><a href="${item.href}" class="${isActive}">${item.label}</a></li>`;
+        return `<li><a href="item.href"class="{isActive}">${item.label}</a></li>`;
     }).join('');
 
     header.innerHTML = `
@@ -84,7 +85,7 @@ function renderFooter() {
     if (!footer) return;
 
     const links = SITE_CONFIG.menu.map(item =>
-        `<li><a href="${item.href}">${item.label}</a></li>`
+        `<li><a href="item.href">{item.label}</a></li>`
     ).join('');
 
     footer.innerHTML = `
@@ -107,7 +108,7 @@ function renderFooter() {
                             <li>📍 ${SITE_CONFIG.address}</li>
                             <li>🕒 ${SITE_CONFIG.hours}</li>
                             <li>📱 WhatsApp: ${SITE_CONFIG.phone}</li>
-                            <li>📸 <a href="${SITE_CONFIG.instagramUrl}" target="_blank">${SITE_CONFIG.instagram}</a></li>
+                            <li>📸 <a href="SITECONFIG.instagramUrl"target="blank">{SITE_CONFIG.instagram}</a></li>
                             <li><a href="admin.html">⚙️ Panel Coordinadores</a></li>
                         </ul>
                     </div>
@@ -144,3 +145,23 @@ function renderCartModal() {
         if (e.target === modal) modal.classList.remove('open');
     });
 }
+function renderWhatsAppFloat() {
+    if (document.getElementById('wsp-float-btn')) return;
+
+    const mensaje = encodeURIComponent('Hola Último Bondi! Quiero hacer una consulta.');
+    const btn = document.createElement('a');
+    btn.id = 'wsp-float-btn';
+    btn.className = 'wsp-float';
+    btn.href = `https://wa.link/k7hj2c`;
+    btn.target = '_blank';
+    btn.rel = 'noopener';
+    btn.setAttribute('aria-label', 'Contactar por WhatsApp');
+    btn.innerHTML = `
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+            <path d="M16.04 2.003c-7.72 0-13.98 6.26-13.98 13.98 0 2.46.64 4.87 1.86 6.99L2 30l7.21-1.89a13.93 13.93 0 0 0 6.83 1.78h.01c7.72 0 13.98-6.26 13.98-13.98 0-3.74-1.46-7.25-4.1-9.89a13.88 13.88 0 0 0-9.89-4.02zm0 25.52h-.01a11.58 11.58 0 0 1-5.9-1.61l-.42-.25-4.28 1.12 1.14-4.17-.27-.43a11.55 11.55 0 0 1-1.78-6.2c0-6.39 5.2-11.59 11.6-11.59 3.1 0 6.01 1.21 8.2 3.4a11.52 11.52 0 0 1 3.39 8.2c0 6.39-5.2 11.53-11.67 11.53zm6.36-8.68c-.35-.17-2.06-1.02-2.38-1.13-.32-.12-.55-.17-.78.17-.23.35-.9 1.13-1.1 1.37-.2.23-.41.26-.75.09-.35-.17-1.47-.54-2.8-1.73-1.03-.92-1.73-2.06-1.93-2.41-.2-.35-.02-.54.15-.71.16-.16.35-.41.52-.61.17-.2.23-.35.35-.58.12-.23.06-.44-.03-.61-.09-.17-.78-1.88-1.07-2.58-.28-.68-.57-.58-.78-.59h-.67c-.23 0-.61.09-.93.44-.32.35-1.22 1.19-1.22 2.9s1.25 3.36 1.42 3.59c.17.23 2.46 3.76 5.96 5.27.83.36 1.48.57 1.99.73.84.27 1.6.23 2.2.14.67-.1 2.06-.84 2.35-1.65.29-.81.29-1.51.2-1.65-.08-.15-.31-.23-.66-.41z"/>
+        </svg>
+    `;
+
+    document.body.appendChild(btn);
+}
+
